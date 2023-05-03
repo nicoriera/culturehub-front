@@ -1,4 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
+import './App.scss';
+import Button from './components/Button';
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -10,17 +13,20 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <>
       <ul>
         {articles.map((article) => (
           <li key={article.id}>
-            <h1>{article.title}</h1>
+            <h1 className="main-title">{article.title}</h1>
             <p>{article.body}</p>
           </li>
         )
         )}
         </ul>
-    </div>
+        <Button label="Valider"></Button>
+        <Button label="Supprimer"></Button>
+
+    </>
   );
 }
 
