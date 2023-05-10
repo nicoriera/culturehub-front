@@ -1,19 +1,25 @@
 import './index.scss';
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Content from './components/Content'
+import Home from './pages/Home/Home'
+import News from './pages/News/News'
+import Post from './pages/Post/Post'
+import NotFound from './pages/NotFound/NotFound'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 
 
 function App() {
-
   return (
-    <>
-      <Header />
-      <Content />
-      <Footer />
-    </>
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/news" component={News} />
+          <Route exact path="/news/:id" component={Post} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
