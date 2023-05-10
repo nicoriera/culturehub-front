@@ -1,2 +1,7 @@
-$font-main-title: Arial, Arial, sans-serif;
-$color-main-title: #ee3f3f;
+@import url("./components/Navbar/navbar.scss");
+@import url("./components/Article/article.scss");
+
+ul {
+  list-style: none;
+  padding: 0;
+}
