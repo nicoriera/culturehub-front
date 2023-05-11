@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
+import './styles/index.scss';
 import App from './App';
 import 'normalize.css';
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Import global des styles
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

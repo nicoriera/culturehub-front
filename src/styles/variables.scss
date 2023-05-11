@@ -1,0 +1,47 @@
+// Couleurs
+$primary-color: #FF0000;
+$secondary-color: #00FF00;
+$text-color: #0C0C0F;;
+$link-color: #0066CC;
+
+// Typographie
+$font-family: 'Roboto', sans-serif;
+$font-size-small: 14px;
+$font-size-medium: 16px;
+$font-size-large: 20px;
+$line-height-small: 1.4;
+$line-height-medium: 1.6;
+$line-height-large: 1.8;
+
+// Marges et espacements
+$margin-small: 10px;
+$margin-medium: 20px;
+$margin-large: 30px;
+$padding-small: 5px;
+$padding-medium: 10px;
+$padding-large: 15px;
+
+// Dimensions
+$button-width: 120px;
+$button-height: 40px;
+$navbar-height: 60px;
+
+// Flexbox
+$flex-display: flex;
+$flex-direction-row: row;
+$flex-direction-column: column;
+$flex-align-center: center;
+$flex-justify-center: center;
+
+// Media queries
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+
+// Z-Index
+$z-index-top: 9999;
+$z-index-medium: 100;
+$z-index-low: 10;
+
+// ... autres variables
