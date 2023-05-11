@@ -12,7 +12,6 @@ const Content = () => {
   return (
     <ul className="container">
       <div>
-        <h1>Articles</h1>
         {articles.map((article) => (
           <li key={article.id}>
             <Link to={`/articles/${article.id}`}>
