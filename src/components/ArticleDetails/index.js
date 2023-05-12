@@ -1,3 +1,3 @@
-import Article from "./Article";
+import ArticleDetails from "./ArticleDetails";
 
-export default Article;
+export default ArticleDetails;

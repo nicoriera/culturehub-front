@@ -1,30 +1,48 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
-const Content = () => {
+const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/articles')
-      .then((response) => response.json())
-      .then((data) => setArticles(data))
-      .catch((error) => console.log(error));
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/articles');
+        if (!response.ok) {
+          throw new Error('Error fetching articles');
+        }
+        const data = await response.json();
+        setArticles(data);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  return (
-    <ul className="container">
-        {articles.map((article) => (
-          <div>
-            <li key={article.id} className="list-items">
-              <h1>{article.title}</h1>
-              <p>{article.description}</p>
-              <p>{article.createdAt}</p>
-            </li>
-          </div>
-        )
-      )}
-  </ul>
-  )
-}
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
-export default Content
+  return (
+    <>
+      <ul className="container">
+        {articles.map((article) => (
+          <li key={article.id}>
+            <Link to={`/articles/${article.id}`}>
+              <div className="list-items">
+                <h1>{article.title}</h1>
+                <p>{article.description}</p>
+                <p>{article.createdAt}</p>
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
+export default ArticlesList
