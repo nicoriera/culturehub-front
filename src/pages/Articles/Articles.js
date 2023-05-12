@@ -1,7 +1,7 @@
 import ArticlesList from '../../components/ArticlesList'
 
 
-function Home() {
+const Articles = () => {
 
   return (
     <>
@@ -10,4 +10,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Articles;
