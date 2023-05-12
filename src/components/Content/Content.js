@@ -10,9 +10,9 @@ const Content = () => {
       .then((data) => setArticles(data));
   }, []);
   return (
+    <>
+    <h1>Articles</h1>
     <ul className="container">
-      <div>
-        <h1>Articles</h1>
         {articles.map((article) => (
           <li key={article.id}>
             <Link to={`/articles/${article.id}`}>
@@ -27,8 +27,8 @@ const Content = () => {
           </li>
         )
       )}
-      </div>
-  </ul>
+    </ul>
+  </>
   )
 }
 
