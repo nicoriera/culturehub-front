@@ -1,12 +1,10 @@
-import Header from '../../components/Header/Header'
-import ArticlesList from '../../components/ArticlesList/ArticlesList'
+import ArticlesList from '../../components/ArticlesList'
 
 
 function Home() {
 
   return (
     <>
-      <Header />
       <ArticlesList />
     </>
   );
