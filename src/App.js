@@ -5,21 +5,21 @@ import Post from './pages/Post/Post'
 import Articles from './pages/Articles/Articles'
 import PostNew from './pages/PostNew/PostNew'
 import NotFound from './pages/NotFound/NotFound'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route exact path="/articles" element={<Articles/>} />
-          <Route exact path="/articles/:id" element={<Post/>} />
-          <Route exact path="/news" element={<News/>} />
-          <Route exact path="/news/:id" element={<PostNew/>} />
-          <Route element={<NotFound/>} />
+          <Route path="/articles" element={<Articles/>} />
+          <Route path="/articles/:id" element={<Post/>} />
+          <Route path="/news" element={<News/>} />
+          <Route path="/news/:id" element={<PostNew/>} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
