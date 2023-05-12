@@ -1,7 +1,7 @@
 import ArticleDetails from '../../components/ArticleDetails'
 
 
-function Home() {
+const Article = () =>{
 
   return (
     <>
@@ -10,4 +10,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Article;
