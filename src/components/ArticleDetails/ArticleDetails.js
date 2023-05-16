@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import Article from '../Article/Article';
 
 const ArticleDetails = ({ match }) => {
   const { id } = useParams();
@@ -29,17 +30,7 @@ const ArticleDetails = ({ match }) => {
 
   return (
     <>
-    <div>
-      {article && (
-        <>
-          <h1>{article.title}</h1>
-          <p>{article.description}</p>
-          <p>{article.body}</p>
-          <p>{article.createdAt}</p>
-        </>
-      )}
-    </div>
-    
+    <Article article={article} />
     <Link to={`/articles`}>
       <button>Back</button>
     </Link>
