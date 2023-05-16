@@ -26,6 +26,8 @@ const ArticlesList = () => {
     return <div>Error: {error}</div>;
   }
 
+  const userLanguage = navigator.language || navigator.userLanguage;
+
   return (
     <>
       <ul className="container">
@@ -35,7 +37,7 @@ const ArticlesList = () => {
               <div className="list-items">
                 <h1>{article.title}</h1>
                 <p>{article.description}</p>
-                <p>{article.createdAt}</p>
+                <p>{new Date(article.createdAt).toLocaleString(userLanguage, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
               </div>
             </Link>
           </li>
