@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import ArticleCard from '../ArticleCard';
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
@@ -26,21 +26,11 @@ const ArticlesList = () => {
     return <div>Error: {error}</div>;
   }
 
-  const userLanguage = navigator.language || navigator.userLanguage;
-
   return (
     <>
       <ul className="container">
         {articles.map((article) => (
-          <li key={article.id}>
-            <Link to={`/articles/${article.id}`}>
-              <div className="list-items">
-                <h1>{article.title}</h1>
-                <p>{article.description}</p>
-                <p>{new Date(article.createdAt).toLocaleString(userLanguage, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-              </div>
-            </Link>
-          </li>
+          <ArticleCard key={article.id} article={article} />
         ))}
       </ul>
     </>
