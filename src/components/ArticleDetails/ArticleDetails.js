@@ -39,6 +39,7 @@ const ArticleDetails = ({ match }) => {
         </>
       )}
     </div>
+    
     <Link to={`/articles`}>
       <button>Back</button>
     </Link>
