@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import Article from '../Article/Article';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import Article from "../Article/Article";
 
 const ArticleDetails = ({ match }) => {
   const { id } = useParams();
@@ -12,7 +12,7 @@ const ArticleDetails = ({ match }) => {
       try {
         const response = await fetch(`http://localhost:3000/articles/${id}`);
         if (!response.ok) {
-          throw new Error('Error fetching article');
+          throw new Error("Error fetching article");
         }
         const data = await response.json();
         setArticle(data);
@@ -30,10 +30,7 @@ const ArticleDetails = ({ match }) => {
 
   return (
     <>
-    <Article article={article} />
-    <Link to={`/articles`}>
-      <button>Back</button>
-    </Link>
+      <Article article={article} />
     </>
   );
 };
