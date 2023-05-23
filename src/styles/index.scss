@@ -3,11 +3,11 @@
 @import "../components/ArticlesList/articles_list.scss";
 @import "../components/ArticleCard/article_card.scss";
 
-
 body {
   font-family: $font-family;
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease-in-out;
 
   h1 {
     font-size: $font-size-large;
@@ -28,4 +28,8 @@ a:link,
 a:visited {
   color: inherit;
   text-decoration: none;
+}
+
+.main-content {
+  margin-top: $navbar-height + $padding-medium;
 }
