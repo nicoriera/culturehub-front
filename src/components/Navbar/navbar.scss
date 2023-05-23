@@ -1,10 +1,8 @@
 .navbar {
-  background-color: transparent;
+  background-color: $background-color;
   color: $font-color-dark;
-  padding: $padding-medium;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   z-index: $z-index-top;
   transition: all 0.3s ease-in-out;
@@ -16,6 +14,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(0px);
+  transition: all 0.3s ease-in-out;
+  padding: $padding-medium;
 }
 
 .navbar.opaque {
@@ -55,10 +56,16 @@ h1 {
 }
 
 .hamburger-icon {
-  width: 25px;
-  height: 3px;
-  margin: 4px;
+  font-size: $font-size-large;
+  margin: 0 1rem 0 0;
   transition: all 0.3s ease-in-out;
+  color: $font-color-dark;
+
+  &:hover {
+    color: $font-color-grey-dark;
+    transition: all 0.3s ease-in-out;
+    font-size: $font-size-extra-large;
+  }
 }
 
 .navbar-links.open {
@@ -77,17 +84,34 @@ h1 {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (min-width: 769px) {
-  .hamburger-button {
-    display: none;
-  }
-}
+.navbar-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: $line-height-large;
+  height: 100vh;
+  background-color: rgba(
+    245,
+    245,
+    245,
+    0.8
+  ); /* Couleur de fond semi-transparente */
+  width: 100vw;
+  top: 6rem;
+  position: fixed;
+  border-radius: 5px;
+  backdrop-filter: blur(20px); /* Effet de flou */
+  transition: all 0.3s ease-in-out;
 
-@media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 10px;
+  .link {
+    font-size: $font-size-large;
+    color: $font-color-grey-dark;
+
+    &:hover {
+      color: $font-color-dark;
+      font-size: $font-size-extra-large;
+      transition: all 0.3s ease-in-out;
+    }
   }
 }

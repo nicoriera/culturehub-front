@@ -1,0 +1,13 @@
+.article-page {
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr 1fr));
+
+  img {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  }
+}

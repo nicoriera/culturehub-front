@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isNavbarOpaque, setIsNavbarOpaque] = useState(false);
   const [isNavbarBlurred, setIsNavbarBlurred] = useState(false);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,7 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setIsNavbarOpen(!isNavbarOpen);
   };
 
   const navbarClassName = `navbar ${isNavbarOpaque ? "opaque" : ""} ${
@@ -38,27 +40,26 @@ const Navbar = () => {
         <Link to="/">
           <h1>HouseCo</h1>
         </Link>
-        <div className={`navbar-links ${isOpen ? "open" : ""}`}>
-          <Link to="/" onClick={toggleMenu}>
-            Home
-          </Link>
-          <Link to="/articles" onClick={toggleMenu}>
-            Articles
-          </Link>
-          <Link to="/news" onClick={toggleMenu}>
-            News
-          </Link>
-        </div>
         <button
           className={`hamburger-button ${isOpen ? "open" : ""}`}
           onClick={toggleMenu}
         >
           <FontAwesomeIcon
             className="hamburger-icon"
-            icon={faBars}
-            style={{ color: "white" }}
+            icon={isNavbarOpen ? faTimes : faBars}
           />
         </button>
+      </div>
+      <div className={`navbar-links ${isOpen ? "open" : ""}`}>
+        <Link className="link" to="/" onClick={toggleMenu}>
+          Home
+        </Link>
+        <Link className="link" to="/articles" onClick={toggleMenu}>
+          Articles
+        </Link>
+        <Link className="link" to="/news" onClick={toggleMenu}>
+          News
+        </Link>
       </div>
     </div>
   );

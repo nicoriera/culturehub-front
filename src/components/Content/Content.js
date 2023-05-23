@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ArticleCard from '../ArticleCard';
+import React, { useState, useEffect } from "react";
+import ArticleCard from "../ArticleCard";
 
 const Content = () => {
   const [articles, setArticles] = useState([]);
@@ -8,9 +8,9 @@ const Content = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/articles');
+        const response = await fetch("http://localhost:3000/articles");
         if (!response.ok) {
-          throw new Error('Error fetching articles');
+          throw new Error("Error fetching articles");
         }
         const data = await response.json();
         setArticles(data);
@@ -28,7 +28,7 @@ const Content = () => {
 
   return (
     <>
-      <h1>Articles</h1>
+      <h1>Listes</h1>
       <ul className="container">
         {articles.map((article) => (
           <ArticleCard key={article.id} article={article} />

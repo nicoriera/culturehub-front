@@ -2,6 +2,7 @@
 @import "../components/Navbar/navbar.scss";
 @import "../components/ArticlesList/articles_list.scss";
 @import "../components/ArticleCard/article_card.scss";
+@import "../components/Article/article.scss";
 
 body {
   font-family: $font-family;
@@ -31,5 +32,8 @@ a:visited {
 }
 
 .main-content {
-  margin-top: $navbar-height + $padding-medium;
+  margin-top: $navbar-height;
+  padding: $padding-medium;
+  background-color: $background-color;
+  height: 100vh;
 }

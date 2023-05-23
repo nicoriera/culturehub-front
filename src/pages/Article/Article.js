@@ -1,13 +1,13 @@
-import ArticleDetails from '../../components/ArticleDetails'
+import ArticleDetails from "../../components/ArticleDetails";
 
-
-const Article = () =>{
-
+const Article = () => {
   return (
     <>
-      <ArticleDetails />
+      <div className="container">
+        <ArticleDetails />
+      </div>
     </>
   );
-}
+};
 
 export default Article;
