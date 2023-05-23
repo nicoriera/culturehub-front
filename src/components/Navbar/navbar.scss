@@ -1,7 +1,15 @@
 .navbar {
-  background-color: #0C0C0F;
-  color: white;
-  padding: 10px;
+  background-color: transparent;
+  color: $font-color-dark;
+  padding: $padding-medium;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-index-top;
+  transition: all 0.3s ease-in-out;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .navbar-content {
@@ -10,8 +18,18 @@
   align-items: center;
 }
 
+.navbar.opaque {
+  background-color: #ffffff; /* Définissez ici la couleur souhaitée pour la navbar opaque */
+}
+
+.navbar.blur {
+  backdrop-filter: blur(
+    10px
+  ); // Ajustez la valeur de flou (10px) selon vos préférences
+}
+
 h1 {
-  font-size: 24px;
+  font-size: $font-size-large;
   margin: 0;
 }
 
