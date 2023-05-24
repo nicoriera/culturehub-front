@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Article = ({ article }) => {
   if (!article) return null;
 
-  const { body, title, description, createdAt, image } = article;
+  const { body, title, description, createdAt, image, author } = article;
 
   const userLanguage = navigator.language || navigator.userLanguage;
   const formattedDate = new Date(createdAt).toLocaleString(userLanguage, {
@@ -24,10 +23,8 @@ const Article = ({ article }) => {
           <p>{description}</p>
           <p>{body}</p>
           <p>{formattedDate}</p>
+          <p>{author}</p>
         </div>
-        {/* <Link to={`/articles`}>
-          <button>Back</button>
-        </Link> */}
       </div>
     </>
   );
