@@ -10,6 +10,7 @@ import HighTech from "./pages/HighTech/HighTech";
 import NotFound from "./pages/NotFound/NotFound";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 };
