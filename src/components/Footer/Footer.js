@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer>
       <div className="footer-logo">
-        <img src="../../assets/images/logo-houseco.png" alt="logo" />
+        <img src="/images/culturehub-logo.png" alt="logo" />
       </div>
       <div className="footer-content">
         <p>Nicolas RIERA © 2023 CultureHub. Tous droits réservés.</p>
