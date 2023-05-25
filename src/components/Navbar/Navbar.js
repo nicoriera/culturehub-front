@@ -54,11 +54,30 @@ const Navbar = () => {
         <Link className="link" to="/" onClick={toggleMenu}>
           Home
         </Link>
-        <Link className="link" to="/articles" onClick={toggleMenu}>
-          Articles
-        </Link>
-        <Link className="link" to="/news" onClick={toggleMenu}>
+        <Link className="link" to="articles/news" onClick={toggleMenu}>
           News
+        </Link>
+        <Link className="link" to="/articles/musique" onClick={toggleMenu}>
+          Musique
+        </Link>
+        <Link className="link" to="/articles/cinema" onClick={toggleMenu}>
+          Cinema
+        </Link>
+        <Link className="link" to="/articles/serie" onClick={toggleMenu}>
+          Serie
+        </Link>
+        <Link className="link" to="/articles/hightech" onClick={toggleMenu}>
+          High Tech
+        </Link>
+        <Link className="link" to="/articles/jeuxvideo" onClick={toggleMenu}>
+          Jeux Vidéo
+        </Link>
+
+        <Link className="link" to="/about" onClick={toggleMenu}>
+          About
+        </Link>
+        <Link className="link" to="/contact" onClick={toggleMenu}>
+          Contact
         </Link>
       </div>
     </div>
