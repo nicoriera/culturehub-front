@@ -38,7 +38,7 @@ const Navbar = () => {
     <div className={navbarClassName}>
       <div className="navbar-content">
         <Link to="/">
-          <h1>HouseCo</h1>
+          <h1>CultureHub</h1>
         </Link>
         <button
           className={`hamburger-button ${isOpen ? "open" : ""}`}
