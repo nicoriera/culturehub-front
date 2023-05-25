@@ -2,32 +2,12 @@ import React, { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import unidecode from "unidecode";
 
+const tiles = ["News", "Musique", "Cinéma", "Série", "Jeux Vidéo", "High Tech"];
+
+const formatTitle = (title) => unidecode(title).toLowerCase();
+
 const Content = () => {
-  const tiles = [
-    "News",
-    "Musique",
-    "Cinéma",
-    "Série",
-    "Jeux Vidéo",
-    "High Tech",
-  ];
-
-  const initialTransformState = tiles.reduce((acc, tile) => {
-    acc[tile] = "";
-    return acc;
-  }, {});
-
-  const [transform, setTransform] = useState(initialTransformState);
-
-  const formatTitle = (title) => {
-    // Supprimer les accents
-    const titleWithoutAccents = unidecode(title);
-    // Convertir en minuscules
-    const lowercaseTitle = titleWithoutAccents.toLowerCase();
-    return lowercaseTitle;
-  };
-
-  const formattedTiles = tiles.map((tile) => formatTitle(tile));
+  const [transform, setTransform] = useState({});
 
   const handleMouseMove = useCallback(
     (tile) => (e) => {
@@ -76,26 +56,26 @@ const Content = () => {
       </div>
       <div className="container-tiles">
         <div className="tiles">
-          {formattedTiles.map((tile) => (
-            <Link to={`/articles/${tile.replace(" ", "")}`} key={tile}>
-              <div
+          {tiles.map((tile) => {
+            const formattedTile = formatTitle(tile);
+            return (
+              <Link
+                to={`/articles/${formattedTile.replace(" ", "")}`}
                 key={tile}
-                className={`tile ${tile.replace(" ", "")}`}
-                style={{
-                  transform: transform[tile],
-                }}
-                onMouseMove={handleMouseMove(tile)}
-                onMouseLeave={handleMouseLeave(tile)}
               >
-                <h1>{tile}</h1>
-              </div>
-            </Link>
-          ))}
+                <div
+                  className={`tile ${formattedTile.replace(" ", "")}`}
+                  style={{ transform: transform[formattedTile] }}
+                  onMouseMove={handleMouseMove(formattedTile)}
+                  onMouseLeave={handleMouseLeave(formattedTile)}
+                >
+                  <h1>{tile}</h1>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
-      <section className="container-articles">
-        <p></p>
-      </section>
     </div>
   );
 };
