@@ -1,4 +1,6 @@
 import React, { useCallback, useState } from "react";
+import { Link } from "react-router-dom";
+import unidecode from "unidecode";
 
 const Content = () => {
   const tiles = [
@@ -6,7 +8,7 @@ const Content = () => {
     "Musique",
     "Cinéma",
     "Série",
-    "Jeux Vidéos",
+    "Jeux Vidéo",
     "High Tech",
   ];
 
@@ -16,6 +18,16 @@ const Content = () => {
   }, {});
 
   const [transform, setTransform] = useState(initialTransformState);
+
+  const formatTitle = (title) => {
+    // Supprimer les accents
+    const titleWithoutAccents = unidecode(title);
+    // Convertir en minuscules
+    const lowercaseTitle = titleWithoutAccents.toLowerCase();
+    return lowercaseTitle;
+  };
+
+  const formattedTiles = tiles.map((tile) => formatTitle(tile));
 
   const handleMouseMove = useCallback(
     (tile) => (e) => {
@@ -64,18 +76,20 @@ const Content = () => {
       </div>
       <div className="container-tiles">
         <div className="tiles">
-          {tiles.map((tile) => (
-            <div
-              key={tile}
-              className={`tile ${tile.replace(" ", "")}`}
-              style={{
-                transform: transform[tile],
-              }}
-              onMouseMove={handleMouseMove(tile)}
-              onMouseLeave={handleMouseLeave(tile)}
-            >
-              <h1>{tile}</h1>
-            </div>
+          {formattedTiles.map((tile) => (
+            <Link to={`/articles/${tile.replace(" ", "")}`} key={tile}>
+              <div
+                key={tile}
+                className={`tile ${tile.replace(" ", "")}`}
+                style={{
+                  transform: transform[tile],
+                }}
+                onMouseMove={handleMouseMove(tile)}
+                onMouseLeave={handleMouseLeave(tile)}
+              >
+                <h1>{tile}</h1>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
