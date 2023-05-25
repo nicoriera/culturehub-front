@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 
 const Content = () => {
   const tiles = [
-    "Actus",
+    "News",
     "Musique",
     "Cinéma",
     "Série",
@@ -47,20 +47,29 @@ const Content = () => {
 
   return (
     <div className="container">
-      <div className="tiles">
-        {tiles.map((tile) => (
-          <div
-            key={tile}
-            className={`tile ${tile.replace(" ", "")}`}
-            style={{
-              transform: transform[tile],
-            }}
-            onMouseMove={handleMouseMove(tile)}
-            onMouseLeave={handleMouseLeave(tile)}
-          >
-            <h1>{tile}</h1>
-          </div>
-        ))}
+      <div className="container-title">
+        <h1 className="conent big-title">
+          Toute vos Actus.
+          <br />
+          Au même endroit.
+        </h1>
+      </div>
+      <div className="container-tiles">
+        <div className="tiles">
+          {tiles.map((tile) => (
+            <div
+              key={tile}
+              className={`tile ${tile.replace(" ", "")}`}
+              style={{
+                transform: transform[tile],
+              }}
+              onMouseMove={handleMouseMove(tile)}
+              onMouseLeave={handleMouseLeave(tile)}
+            >
+              <h1>{tile}</h1>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
