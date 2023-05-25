@@ -46,13 +46,21 @@ const Content = () => {
   );
 
   return (
-    <div className="container">
+    <div>
       <div className="container-title">
-        <h1 className="conent big-title">
+        <h1 className="content big-title animated-text">
           Toute vos Actus.
           <br />
           Au même endroit.
         </h1>
+        <h2>
+          Des critiques de films. Des analyses de séries captivantes. Vos
+          dernières nouvelles musicales en détail. La couverture la plus
+          complète des jeux vidéo innovants. Et la plus grande collection
+          d'articles sur le high-tech. Tout ce que vous cherchez en matière de
+          divertissement et de technologie est ici. Découvrez-le exclusivement
+          sur HouseCo.
+        </h2>
       </div>
       <div className="container-tiles">
         <div className="tiles">
@@ -71,6 +79,9 @@ const Content = () => {
           ))}
         </div>
       </div>
+      <section className="container-articles">
+        <p></p>
+      </section>
     </div>
   );
 };

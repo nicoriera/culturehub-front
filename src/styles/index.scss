@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   transition: all 0.3s ease-in-out;
+  background-color: $background-color;
 
   h1 {
     font-size: $font-size-large;
@@ -34,6 +35,5 @@ a:visited {
 .main-content {
   margin-top: $navbar-height;
   padding: $padding-medium;
-  background-color: $background-color;
   height: 100vh;
 }
