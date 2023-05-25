@@ -1,40 +1,68 @@
-import React, { useState, useEffect } from "react";
-import ArticleCard from "../ArticleCard";
+import React, { useCallback, useState } from "react";
 
 const Content = () => {
-  const [articles, setArticles] = useState([]);
-  const [error, setError] = useState(null);
+  const tiles = [
+    "Actus",
+    "Musique",
+    "Cinéma",
+    "Série",
+    "Jeux Vidéos",
+    "High Tech",
+  ];
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/articles");
-        if (!response.ok) {
-          throw new Error("Error fetching articles");
-        }
-        const data = await response.json();
-        setArticles(data);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
+  const initialTransformState = tiles.reduce((acc, tile) => {
+    acc[tile] = "";
+    return acc;
+  }, {});
 
-    fetchData();
-  }, []);
+  const [transform, setTransform] = useState(initialTransformState);
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  const handleMouseMove = useCallback(
+    (tile) => (e) => {
+      const cardRect = e.currentTarget.getBoundingClientRect();
+      const cardCenterX = cardRect.left + cardRect.width / 2;
+      const cardCenterY = cardRect.top + cardRect.height / 2;
+      const deltaX = e.clientX - cardCenterX;
+      const deltaY = e.clientY - cardCenterY;
+      const rotateX = (deltaY / cardCenterY) * 50;
+      const rotateY = (deltaX / cardCenterX) * 50;
+
+      setTransform((prev) => ({
+        ...prev,
+        [tile]: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+      }));
+    },
+    []
+  );
+
+  const handleMouseLeave = useCallback(
+    (tile) => () => {
+      setTransform((prev) => ({
+        ...prev,
+        [tile]: "",
+      }));
+    },
+    []
+  );
 
   return (
-    <>
-      <h1>Listes</h1>
-      <ul className="container">
-        {articles.map((article) => (
-          <ArticleCard key={article.id} article={article} />
+    <div className="container">
+      <div className="tiles">
+        {tiles.map((tile) => (
+          <div
+            key={tile}
+            className={`tile ${tile.replace(" ", "")}`}
+            style={{
+              transform: transform[tile],
+            }}
+            onMouseMove={handleMouseMove(tile)}
+            onMouseLeave={handleMouseLeave(tile)}
+          >
+            <h1>{tile}</h1>
+          </div>
         ))}
-      </ul>
-    </>
+      </div>
+    </div>
   );
 };
 
