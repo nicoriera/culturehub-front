@@ -1,7 +1,26 @@
 import React from "react";
+import data from "../../data/data.json";
+import ArticleCard from "../../components/ArticleCard";
 
-const HighTech = () => {
-  return <div>HighTech</div>;
+const HighTechPage = () => {
+  // Filtrer les articles qui ont le typeId correspondant à "Cinéma"
+  const hightechArticles = data.filter((article) => article.typeId === 11); // Remplacez 1 par le typeId correspondant à "Cinéma"
+  console.log(hightechArticles);
+
+  if (hightechArticles.length === 0) {
+    return <h1>Article en cours d'écriture</h1>;
+  } else {
+    return (
+      <div>
+        <h1>Cinéma</h1>
+        <ul>
+          {hightechArticles.map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
+        </ul>
+      </div>
+    );
+  }
 };
 
-export default HighTech;
+export default HighTechPage;

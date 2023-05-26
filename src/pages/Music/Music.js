@@ -1,7 +1,26 @@
 import React from "react";
+import data from "../../data/data.json";
+import ArticleCard from "../../components/ArticleCard";
 
-const Music = () => {
-  return <div>Music</div>;
+const MusicPage = () => {
+  // Filtrer les articles qui ont le typeId correspondant à "Cinéma"
+  const musicArticles = data.filter((article) => article.typeId === 4); // Remplacez 1 par le typeId correspondant à "Cinéma"
+  console.log(musicArticles);
+
+  if (musicArticles.length === 0) {
+    return <h1>Article en cours d'écriture</h1>;
+  } else {
+    return (
+      <div>
+        <h1>Cinéma</h1>
+        <ul>
+          {musicArticles.map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
+        </ul>
+      </div>
+    );
+  }
 };
 
-export default Music;
+export default MusicPage;
