@@ -10,8 +10,8 @@ const NewsPage = () => {
   } else {
     return (
       <div>
-        <h1>Cinéma</h1>
-        <ul>
+        <h1>News</h1>
+        <ul className="container">
           {data.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}

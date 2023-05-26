@@ -12,8 +12,8 @@ const MusicPage = () => {
   } else {
     return (
       <div>
-        <h1>Cinéma</h1>
-        <ul>
+        <h1>Musique</h1>
+        <ul className="container">
           {musicArticles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}

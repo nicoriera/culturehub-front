@@ -13,7 +13,7 @@ const VideoGamesPage = () => {
     return (
       <div>
         <h1>Cinéma</h1>
-        <ul>
+        <ul className="container">
           {videoGamesArticles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}

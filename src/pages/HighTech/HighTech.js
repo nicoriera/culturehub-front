@@ -12,8 +12,8 @@ const HighTechPage = () => {
   } else {
     return (
       <div>
-        <h1>Cinéma</h1>
-        <ul>
+        <h1>High Tech</h1>
+        <ul className="container">
           {hightechArticles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}
