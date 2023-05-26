@@ -41,8 +41,6 @@ const ArticleCard = ({ article }) => {
 
   useEffect(() => {
     // Effectuez ici la récupération du nom du type à partir du backend
-    // Utilisez une méthode appropriée pour effectuer une requête à votre backend et obtenir les informations des types
-    // Par exemple, vous pouvez utiliser fetch ou axios pour effectuer une requête GET
 
     const fetchTypeName = async () => {
       try {
