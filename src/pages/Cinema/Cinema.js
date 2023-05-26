@@ -13,7 +13,7 @@ const CinemaPage = () => {
     return (
       <div>
         <h1>Cinéma</h1>
-        <ul>
+        <ul className="container">
           {cinemaArticles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}

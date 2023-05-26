@@ -12,8 +12,8 @@ const SeriePage = () => {
   } else {
     return (
       <div>
-        <h1>Cinéma</h1>
-        <ul>
+        <h1>Séries</h1>
+        <ul className="container">
           {serieArticles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}
