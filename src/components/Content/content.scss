@@ -23,61 +23,6 @@
   }
 }
 
-.tiles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-  margin: $margin-medium;
-  padding: $padding-medium;
-  background-color: rgba(245, 245, 245, 0.8);
-  border-radius: $border-radius-large;
-  backdrop-filter: blur(10px);
-  align-items: center;
-
-  .tile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 8em;
-    border-radius: $border-radius;
-    text-align: center;
-    transition: transform 0.1s ease, background-color 0.2s ease;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    h1 {
-      color: $font-color-light;
-    }
-  }
-
-  .news {
-    background: linear-gradient(135deg, #a2d9fe 0%, #83c5be 100%);
-  }
-
-  .musique {
-    background: linear-gradient(135deg, #ffd3a5 0%, #ff9a3c 100%);
-  }
-
-  .cinema {
-    background: linear-gradient(135deg, #ffa5d8 0%, #ff52b2 100%);
-  }
-
-  .serie {
-    background: linear-gradient(135deg, #c3dfa9 0%, #8aca75 100%);
-  }
-
-  .jeuxvideo {
-    background: linear-gradient(135deg, #d1a5ff 0%, #b565d9 100%);
-  }
-
-  .hightech {
-    background: linear-gradient(135deg, #a5c8ff 0%, #7298d4 100%);
-  }
-}
-
 @keyframes example {
   0% {
     color: #0c0c0f;
