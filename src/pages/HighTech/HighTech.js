@@ -5,7 +5,6 @@ import ArticleCard from "../../components/ArticleCard";
 const HighTechPage = () => {
   // Filtrer les articles qui ont le typeId correspondant à "Cinéma"
   const hightechArticles = data.filter((article) => article.typeId === 11); // Remplacez 1 par le typeId correspondant à "Cinéma"
-  console.log(hightechArticles);
 
   if (hightechArticles.length === 0) {
     return <h1>Article en cours d'écriture</h1>;
