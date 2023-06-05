@@ -18,14 +18,15 @@ const Article = () => {
 
   return (
     <>
-      <div className="article-page">
+      <div className="article-page-container">
         <div>
           <h1>{article.title}</h1>
-          <img src={article.image} alt={article.title} />
         </div>
         <div>
-          <p>{article.description}</p>
-          <p>{article.body}</p>
+          <img src={article.image} alt={article.title} />
+          <div className="column-container">
+            <p>{article.body}</p>
+          </div>
           <p>{formattedDate}</p>
           <p>{article.author}</p>
         </div>
