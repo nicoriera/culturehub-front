@@ -5,6 +5,7 @@
 @import "../components/Content/content.scss";
 @import "../components/Tile/tile.scss";
 @import "../components/Footer/footer.scss";
+@import "../components/Article/article.scss";
 
 body {
   font-family: $font-family;
@@ -38,4 +39,22 @@ a:visited {
   margin-top: $navbar-height;
   padding: $padding-medium;
   height: 100vh;
+}
+
+@media (max-width: $breakpoint-small) {
+  .main-content {
+    padding: $padding-small;
+    .column-container {
+      column-count: 1;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  .main-content {
+    padding: $padding-large;
+    .column-container {
+      column-count: 2;
+    }
+  }
 }

@@ -76,6 +76,9 @@ $border-radius-large: 10px;
   // Définissez ici les valeurs spécifiques pour les écrans de taille moyenne
   $font-size-medium: 1.2em;
   $margin-medium: 15px;
+  .column-container {
+    column-count: 1;
+  }
   // ... autres modifications
 }
 
