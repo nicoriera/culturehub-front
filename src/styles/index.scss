@@ -38,7 +38,7 @@ a:visited {
 .main-content {
   margin: $navbar-height 0;
   padding: $padding-medium;
-  height: auto;
+  min-height: 100vh;
 }
 
 @media (max-width: $breakpoint-small) {
