@@ -5,6 +5,7 @@
 }
 
 .card {
+  max-width: 40vw;
   padding: 1rem;
   margin: 1rem;
   border-radius: 5px;
@@ -28,5 +29,11 @@
     font-style: italic;
     font-size: $font-size-small;
     color: $font-color-grey;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: 80vw;
   }
 }
