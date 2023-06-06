@@ -27,8 +27,8 @@ const ArticleCard = ({ article }) => {
     const cardCenterY = cardRect.top + cardRect.height / 2;
     const deltaX = e.clientX - cardCenterX;
     const deltaY = e.clientY - cardCenterY;
-    const rotateX = (deltaY / cardCenterY) * 5;
-    const rotateY = (deltaX / cardCenterX) * 5;
+    const rotateX = (deltaY / cardCenterY) * 1;
+    const rotateY = (deltaX / cardCenterX) * 1;
 
     setTransform(
       `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`

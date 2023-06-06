@@ -1,12 +1,11 @@
 footer {
   background-color: #f2f2f2;
-  padding: 20px;
   text-align: center;
-  display: none;
-}
-
-.footer-logo img {
-  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
 }
 
 .footer-content {
