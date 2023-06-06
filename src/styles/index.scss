@@ -36,7 +36,7 @@ a:visited {
 }
 
 .main-content {
-  margin-top: $navbar-height;
+  margin: $navbar-height 0;
   padding: $padding-medium;
   height: 100vh;
 }
