@@ -72,13 +72,6 @@ const Navbar = () => {
         <Link className="link" to="/articles/jeuxvideo" onClick={toggleMenu}>
           Jeux Vidéo
         </Link>
-
-        <Link className="link" to="/about" onClick={toggleMenu}>
-          About
-        </Link>
-        <Link className="link" to="/contact" onClick={toggleMenu}>
-          Contact
-        </Link>
       </div>
     </div>
   );
