@@ -44,17 +44,11 @@ a:visited {
 @media (max-width: $breakpoint-small) {
   .main-content {
     padding: $padding-small;
-    .column-container {
-      column-count: 1;
-    }
   }
 }
 
 @media (min-width: $breakpoint-medium) {
   .main-content {
     padding: $padding-large;
-    .column-container {
-      column-count: 2;
-    }
   }
 }

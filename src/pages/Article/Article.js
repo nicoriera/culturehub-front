@@ -16,6 +16,8 @@ const Article = () => {
     }
   );
 
+  const paragraphs = article.body.split("\n");
+
   return (
     <>
       <div className="article-page-container">
@@ -24,8 +26,12 @@ const Article = () => {
           <img src={article.image} alt={article.title} />
         </div>
         <div>
-          <div className="column-container">
-            <p>{article.body}</p>
+          <div className="paragraphs-container">
+            {paragraphs.map((paragraph, index) => (
+              <p className="paragraph" key={index}>
+                {paragraph}
+              </p>
+            ))}
           </div>
           <p>{formattedDate}</p>
           <p>{article.author}</p>
