@@ -35,18 +35,6 @@ h1 {
   margin: 0;
 }
 
-.navbar-links {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-links a {
-  color: white;
-  text-decoration: none;
-  margin-right: 10px;
-  font-size: 18px;
-}
-
 .hamburger-button {
   background: none;
   border: none;
@@ -69,10 +57,6 @@ h1 {
   }
 }
 
-.navbar-links.open {
-  display: flex;
-}
-
 .hamburger-icon.open {
   background-color: transparent;
 }
@@ -85,21 +69,31 @@ h1 {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+.navbar-links.open {
+  display: flex;
+}
+
 .navbar-links {
   display: none;
+  position: fixed;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  line-height: $line-height-large;
+  line-height: $line-height-medium;
+  overflow-y: auto;
   height: 100vh;
+  max-height: calc(100vh - 5rem);
   background-color: rgba(
     245,
     245,
     245,
     0.8
   ); /* Couleur de fond semi-transparente */
-  width: 100vw;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   top: 6rem;
+  left: 0;
   position: fixed;
   border-radius: 5px;
   backdrop-filter: blur(20px); /* Effet de flou */

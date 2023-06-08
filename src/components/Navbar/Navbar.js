@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { toggleNavbar } = props;
   const [isOpen, setIsOpen] = useState(false);
   const [isNavbarOpaque, setIsNavbarOpaque] = useState(false);
   const [isNavbarBlurred, setIsNavbarBlurred] = useState(false);
@@ -28,6 +29,7 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     setIsNavbarOpen(!isNavbarOpen);
+    toggleNavbar();
   };
 
   const navbarClassName = `navbar ${isNavbarOpaque ? "opaque" : ""} ${
@@ -35,7 +37,7 @@ const Navbar = () => {
   } ${isOpen ? "open" : ""}`;
 
   return (
-    <div className={navbarClassName}>
+    <div className={`navbar ${navbarClassName} scrollable-nav`}>
       <div className="navbar-content">
         <Link to="/">
           <h1>CultureHub</h1>
