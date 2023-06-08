@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./styles/index.scss";
 import Home from "./pages/Home/Home";
 import Article from "./pages/Article/Article";
@@ -9,14 +10,23 @@ import VideoGames from "./pages/VideoGames/VideoGames";
 import HighTech from "./pages/HighTech/HighTech";
 import NotFound from "./pages/NotFound/NotFound";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsNavbarOpen(!isNavbarOpen);
+  };
+
+  const mainContentClassName = isNavbarOpen
+    ? "main-content fixed"
+    : "main-content";
   return (
     <Router>
-      <Header />
-      <div className="main-content">
+      <Navbar isOpen={isNavbarOpen} toggleNavbar={toggleNavbar} />
+      <div className={mainContentClassName}>
         <Routes>
           <Route path="/articles/news" element={<News />} />
           <Route path="/articles/:id" element={<Article />} />

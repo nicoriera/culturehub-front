@@ -37,8 +37,11 @@ a:visited {
 
 .main-content {
   margin: $navbar-height 0;
-  padding: $padding-medium;
   min-height: 100vh;
+}
+
+.main-content.fixed {
+  position: fixed;
 }
 
 @media (max-width: $breakpoint-small) {
