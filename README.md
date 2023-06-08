@@ -1,11 +1,6 @@
-<h1>Projet personnel<h1>
-
-<p>Culture Hub est une plateforme culturelle créée en utilisant les technologies React et NestJS. Ce projet vise à offrir un espace centralisé pour explorer et découvrir divers aspects de la culture.<p>
-
-<h2>Avancée du projet :<h2>
-
-<p>Finalisations de la première version front.<p>
-<p>Implementation du backend pour mettre en relation le front et le back.<p>
-
-<p>Backend : https://github.com/nicoriera/culturehub-back<p>
-
+<h1>Personal Project<h1>
+<p>Culture Hub is a cultural platform created using React and NestJS technologies. This project aims to provide a centralized space to explore and discover various aspects of culture.<p>
+<h2>Project Progress:<h2>
+<p>Finalization of the first front-end version.<p>
+<p>Implementation of the backend to connect the front-end and the back-end.<p>
+<p>Backend: https://github.com/nicoriera/culturehub-back<p>
