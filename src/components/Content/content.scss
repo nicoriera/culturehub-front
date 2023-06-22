@@ -21,25 +21,50 @@
     text-align: center;
     line-height: $line-height-small;
   }
+
+  .transition {
+    opacity: 0;
+    animation: fade-in 2s ease-in forwards;
+    transform: translateY(100px);
+    transition-delay: 4s;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
-@keyframes example {
+@keyframes big-title {
   0% {
     color: #0c0c0f;
+    opacity: 0;
+    transform: translateY(100px);
   }
   25% {
+    opacity: 1;
     color: #ffd3a5;
   }
   50% {
+    opacity: 1;
     color: #ffa5d8;
   }
   100% {
     color: #c3dfa9;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .animated-text {
-  animation-name: example;
-  animation-duration: 5s;
+  animation-name: big-title;
+  animation-duration: 2s;
   animation-iteration-count: initial;
+  transition-delay: 4s;
 }
