@@ -8,16 +8,12 @@ const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isNavbarOpaque, setIsNavbarOpaque] = useState(false);
   const [isNavbarBlurred, setIsNavbarBlurred] = useState(false);
-  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const isOpaque = scrollTop > 0;
-      setIsNavbarOpaque(isOpaque);
-
-      const isBlurred = scrollTop > 60;
-      setIsNavbarBlurred(isBlurred);
+      setIsNavbarOpaque(scrollTop > 0);
+      setIsNavbarBlurred(scrollTop > 60);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -28,7 +24,6 @@ const Navbar = (props) => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    setIsNavbarOpen(!isNavbarOpen);
     toggleNavbar();
   };
 
@@ -48,7 +43,7 @@ const Navbar = (props) => {
         >
           <FontAwesomeIcon
             className="hamburger-icon"
-            icon={isNavbarOpen ? faTimes : faBars}
+            icon={isOpen ? faTimes : faBars}
           />
         </button>
       </div>
