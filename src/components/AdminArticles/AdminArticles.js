@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import TableRow from "./TableRow";
 
 const AdminArticles = () => {
   const [articles, setArticles] = useState([]);
@@ -16,6 +17,19 @@ const AdminArticles = () => {
       });
   }, []);
 
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this article?")) {
+      axios
+        .delete(`/api/articles/${id}`)
+        .then(() => {
+          setArticles(articles.filter((article) => article.id !== id));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
+
   return (
     <div>
       <h2>Gestion des Articles</h2>
@@ -30,15 +44,11 @@ const AdminArticles = () => {
         </thead>
         <tbody>
           {articles.map((article) => (
-            <tr key={article.id}>
-              <td>{article.title}</td>
-              <td>{article.author}</td>
-              <td>{article.createdAt}</td>
-              <td>
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
-            </tr>
+            <TableRow
+              key={article.id}
+              article={article}
+              handleDelete={handleDelete}
+            />
           ))}
         </tbody>
       </table>
