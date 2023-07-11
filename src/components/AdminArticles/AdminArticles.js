@@ -18,7 +18,7 @@ const AdminArticles = () => {
 
   return (
     <div>
-      <h1>Articles</h1>
+      <h2>Gestion des Articles</h2>
       <table>
         <thead>
           <tr>
@@ -33,7 +33,7 @@ const AdminArticles = () => {
             <tr key={article.id}>
               <td>{article.title}</td>
               <td>{article.author}</td>
-              <td>{article.publishedDate}</td>
+              <td>{article.createdAt}</td>
               <td>
                 <button>Edit</button>
                 <button>Delete</button>

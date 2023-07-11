@@ -11,7 +11,7 @@ import Series from "./pages/Series/Series";
 import VideoGames from "./pages/VideoGames/VideoGames";
 import HighTech from "./pages/HighTech/HighTech";
 import NotFound from "./pages/NotFound/NotFound";
-import CreateArticle from "./pages/CreateArticle/CreateArticle";
+import Admin from "./pages/Admin/Admin";
 // COMPONENTS
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
@@ -38,7 +38,7 @@ const App = () => {
           <Route path="/articles/serie" element={<Series />} />
           <Route path="/articles/jeuxvideo" element={<VideoGames />} />
           <Route path="/articles/hightech" element={<HighTech />} />
-          <Route path="/create-article" element={<CreateArticle />} />
+          <Route path="/admin" element={<Admin />} />
 
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
