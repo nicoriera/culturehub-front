@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import TableRow from "./TableRow";
+import TableRow from "../TableRow";
 
 const AdminArticles = () => {
   const [articles, setArticles] = useState([]);
