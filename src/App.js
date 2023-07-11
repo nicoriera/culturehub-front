@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./styles/index.scss";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// PAGES
 import Home from "./pages/Home/Home";
 import Article from "./pages/Article/Article";
 import News from "./pages/News/News";
@@ -9,7 +11,8 @@ import Series from "./pages/Series/Series";
 import VideoGames from "./pages/VideoGames/VideoGames";
 import HighTech from "./pages/HighTech/HighTech";
 import NotFound from "./pages/NotFound/NotFound";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import CreateArticle from "./pages/CreateArticle/CreateArticle";
+// COMPONENTS
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -35,6 +38,7 @@ const App = () => {
           <Route path="/articles/serie" element={<Series />} />
           <Route path="/articles/jeuxvideo" element={<VideoGames />} />
           <Route path="/articles/hightech" element={<HighTech />} />
+          <Route path="/create-article" element={<CreateArticle />} />
 
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
