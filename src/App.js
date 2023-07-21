@@ -39,7 +39,6 @@ const App = () => {
           <Route path="/articles/jeuxvideo" element={<VideoGames />} />
           <Route path="/articles/hightech" element={<HighTech />} />
           <Route path="/admin" element={<Admin />} />
-
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
